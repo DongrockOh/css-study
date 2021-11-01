@@ -1,7 +1,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: [frist-line]100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
+  grid-template-rows: repeat(4, [sexy-line] 100px);
   gap: 10px;
 }
 
@@ -12,9 +13,11 @@
 }
 .content {
   background-color: royalblue;
-  grid-column: 1 / -2;
+  /* grid-column: 1 / -2; */
+  grid-column: frist-line / fourth-line;
   /* grid-row: 2 / 4; */
-  grid-row: span 2;
+  /* grid-row: span 2; */
+  grid-row: sexy-line 2 / sexy-line 4;
 }
 .nav {
   background-color: purple;
