@@ -1,30 +1,28 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-columns: [frist-line]100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
-  grid-template-rows: repeat(4, [sexy-line] 100px);
-  gap: 10px;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 100px); */
+  height: 50vh;
+  grid-template:
+    [header-start] "header header header header" 1fr [header-end]
+    [content-start] "content content content nav" 2fr [content-end]
+    [footer-start] "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr;
+  gap: 5px;
 }
 
 .header {
   background-color: green;
-  /* grid-column: 1 / -1; */
-  grid-column: span 4;
+  grid-area: header;
 }
 .content {
   background-color: royalblue;
-  /* grid-column: 1 / -2; */
-  grid-column: frist-line / fourth-line;
-  /* grid-row: 2 / 4; */
-  /* grid-row: span 2; */
-  grid-row: sexy-line 2 / sexy-line 4;
+  grid-area: content;
 }
 .nav {
   background-color: purple;
-  grid-row: span 2;
+  grid-area: nav;
 }
 .footer {
   background-color: orange;
-  /* grid-column: 1 / -1; */
-  grid-column: span 4;
+  grid-area: footer;
 }
