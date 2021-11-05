@@ -1,21 +1,23 @@
 @import "_variables";
+@import "_mixins";
 
-h2 {
-  color: $bg;
+a {
+  margin-bottom: 10px;
+  &:nth-child(odd) {
+    @include link("odd");
+  }
+  &:nth-child(even) {
+    @include link("even");
+  }
 }
 
-.box {
-  &:hover {
-    background-color: green;
-  }
-  margin-top: 20px;
-  h2 {
-    color: blue;
-    &:hover {
-      color: red;
-    }
-  }
-  button {
-    color: red;
-  }
-}
+// link($color) 이기 때문에 안에 색상을 작성하여 넣을 수 있다.
+// a {
+//   margin-bottom: 10px;
+//   &:nth-child(odd) {
+//     @include link(red);
+//   }
+//   &:nth-child(even) {
+//     @include link(blue);
+//   }
+// }

@@ -1,0 +1,16 @@
+@mixin link($word) {
+  text-decoration: none;
+  display: block;
+  @if $wrod == "odd" {
+    color: blue;
+  } @else {
+    color: red;
+  }
+}
+
+// $할당된 선택자의 색상을 styles에서 변경할 수 있다($colors)
+// @mixin link($color) {
+//   text-decoration: none;
+//   display: block;
+//   color: $color;
+// }
