@@ -1,23 +1,9 @@
-@import "_variables";
-@import "_mixins";
-
+@import "_buttons";
 a {
-  margin-bottom: 10px;
-  &:nth-child(odd) {
-    @include link("odd");
-  }
-  &:nth-child(even) {
-    @include link("even");
-  }
+  @extend %button;
+  text-decoration: none;
 }
-
-// link($color) 이기 때문에 안에 색상을 작성하여 넣을 수 있다.
-// a {
-//   margin-bottom: 10px;
-//   &:nth-child(odd) {
-//     @include link(red);
-//   }
-//   &:nth-child(even) {
-//     @include link(blue);
-//   }
-// }
+button {
+  @extend %button;
+  border: none;
+}
